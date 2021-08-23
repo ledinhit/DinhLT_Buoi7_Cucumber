@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
+  <test thread-count="5" name="Dinh_Buoi7_Cucumber(failed)">
+    <classes>
+      <class name="tests.ProductTest">
+        <methods>
+          <include name="afterClass"/>
+          <include name="setUp"/>
+          <include name="createProductSuccess"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- tests.ProductTest -->
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="afterClass"/>
+          <include name="loginSuccess"/>
+          <include name="beforeClass"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+      <class name="tests.OrderTest">
+        <methods>
+          <include name="afterClass"/>
+          <include name="setUp"/>
+          <include name="beforeClass"/>
+          <include name="createOrderSuccess"/>
+        </methods>
+      </class> <!-- tests.OrderTest -->
+      <class name="tests.CustomerTest">
+        <methods>
+          <include name="afterClass"/>
+          <include name="setUp"/>
+          <include name="createCustomerSuccess"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- tests.CustomerTest -->
+    </classes>
+  </test> <!-- Dinh_Buoi7_Cucumber(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->
