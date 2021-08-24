@@ -6,7 +6,7 @@ Feature: Create customer
     When Select Customer in Lest menu
     And Select List customers
     And Click button create customer
-    And Enter enter customer information
+    And Enter customer information
     And Click button Save Customer
     Then verify success message
     And Close Browser

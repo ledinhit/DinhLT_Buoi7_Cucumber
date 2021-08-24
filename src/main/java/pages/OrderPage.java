@@ -41,10 +41,9 @@ public class OrderPage {
     private WebElement orderLineItemProductPrice;
     public int randomNum = ThreadLocalRandom.current().nextInt(0, 1000);
 
-    //Data test tạo sản phẩm
-    String dataName = "Sản phảm test " + randomNum;
-    String dataSKU = "sku-" + randomNum;
-    String dataPrice = "50000";
+    public String dataName = "Sản phảm test " + randomNum;
+    public String dataSKU = "sku-" + randomNum;
+    public String dataPrice = "50000";
 
     public OrderPage(WebDriver driver) {
         this.driver = driver;
@@ -154,80 +153,4 @@ public class OrderPage {
         verifySkuProductInOrder();
     }
 
-//    public void createOrderSuccess() {
-//
-//        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-//        driver.findElement(By.xpath("//span[contains(text(),'Đơn hàng')]")).click();
-//        WebElement creatOrder = driver.findElement(By.xpath("//a[@href='/admin/orders/create']"));
-//        creatOrder.click();
-//
-//        WebElement customer = driver.findElement(By.xpath("//input[@id='search-customer']"));
-//        customer.click();
-//
-//        // Lấy ra danh sách khách hàng và chọn khách hàng đầu tiên
-//        List<WebElement> listCustomer = driver.findElements(By.xpath("//div[starts-with(@id,'item-suggest-customers')]"));
-//        listCustomer.get(0).click();
-//        WebElement product = driver.findElement(By.xpath("//input[@id='search-product']"));
-//        product.click();
-//        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-//        WebElement newProd = driver.findElement(By.xpath("//p[contains(text(),'Thêm mới sản phẩm')]"));
-//        newProd.click();
-//
-//        int randomNum = ThreadLocalRandom.current().nextInt(999, 2000);
-//        System.out.println(randomNum);
-//        //Data test tạo sản phẩm
-//        String dataName = "Sản phảm test " + randomNum;
-//        String dataSKU = "sku-" + randomNum;
-//        String dataPrice = "50000";
-//
-//        //Tạo sản phẩm mới
-//        WebElement nameProd = driver.findElement(By.xpath("//input[@id='Name']"));
-//        nameProd.sendKeys(dataName);
-//        WebElement skuProd = driver.findElement(By.xpath("//input[@id='sku']"));
-//        skuProd.sendKeys(dataSKU);
-//        List<WebElement> priceProd = driver.findElements(By.xpath("//div[@id='sapo-modal-container']//input[@context = 'numberInput']"));
-//        priceProd.get(0).sendKeys(dataPrice);
-//        WebElement btnCreateProd = driver.findElement(By.xpath("//a[@id='btn-create-product']"));
-//        btnCreateProd.click();
-//
-//        //Bấm tạo đơn
-//        WebElement btnCreateOrder = driver.findElement(By.xpath("//div[@id='content']/div[1]//a[contains(text(),'Tạo đơn và duyệt (F1)')]"));
-//        btnCreateOrder.click();
-//
-//        List<WebElement> orderLineItem = driver.findElements(By.xpath("//tbody[@id='line_item_rows']/tr/td"));
-//        String sku = orderLineItem.get(0).getText();
-////        assertEquals(sku, dataSKU);
-//        String name = driver.findElement(By.xpath("//tbody[@id='line_item_rows']/tr/td[2]/div/span")).getText();
-////        assertEquals(name, dataName);
-//    }
-//
-//
-//    public void createOrderFail() throws InterruptedException {
-//
-//        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-//
-//        //Tắt popup quảng cáo khi mới đăng nhập thành công ( bỏ comment nếu chạy có popup)
-//        //driver.getWindowHandle();
-//        //driver.findElement(By.xpath("//span[@class='button-close-dialog']")).click();
-//
-//        driver.findElement(By.xpath("//span[contains(text(),'Đơn hàng')]")).click();
-//        WebElement creatOrder = driver.findElement(By.xpath("//a[@href='/admin/orders/create']"));
-//        creatOrder.click();
-//
-//        WebElement customer = driver.findElement(By.xpath("//input[@id='search-customer']"));
-//        customer.click();
-//
-//        // Lấy ra danh sách khách hàng và chọn khách hàng đầu tiên
-//        List<WebElement> listCustomer = driver.findElements(By.xpath("//div[starts-with(@id,'item-suggest-customers')]"));
-//        listCustomer.get(0).click();
-//
-//        //Bấm tạo đơn
-//        WebElement btnCreateOrder = driver.findElement(By.xpath("//div[@id='content']/div[1]//a[contains(text(),'Tạo đơn và duyệt (F1)')]"));
-//        btnCreateOrder.click();
-//        Thread.sleep(1000);
-//        String noti = driver.findElement(By.xpath("//span[@class='ajax-notification-message']")).getText();
-//        System.out.println(noti);
-//        assertEquals(noti, "Vui lòng chọn sản phẩm vào đơn hàng!");
-//
-//    }
 }

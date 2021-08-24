@@ -45,8 +45,8 @@ public class CustomerTest extends BaseSetup {
         customer.clickButtonCreateCustomer();
     }
 
-    @And("Enter enter customer information")
-    public void enterEnterCustomerInformation() throws InterruptedException {
+    @And("Enter customer information")
+    public void enterCustomerInformation() throws InterruptedException {
         customer.enterNameCustomer("Khách hàng số " + customer.randomNum);
         customer.enterCodeCustomer("KH-" + customer.randomNum);
         customer.enterPhoneCustomer("097887142" + customer.randomNumForPhone);
@@ -81,4 +81,6 @@ public class CustomerTest extends BaseSetup {
     public void closeBrowser() throws InterruptedException {
         afterClass();
     }
+
+
 }
