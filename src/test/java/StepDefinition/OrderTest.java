@@ -1,6 +1,6 @@
 package StepDefinition;
 
-import base.BaseSetup;
+import base.BaseSetupCucumber;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,7 +9,8 @@ import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
 import pages.OrderPage;
 
-public class OrderTest extends BaseSetup {
+
+public class OrderTest extends BaseSetupCucumber {
     private WebDriver driver;
     public LoginPage login;
     public OrderPage order;

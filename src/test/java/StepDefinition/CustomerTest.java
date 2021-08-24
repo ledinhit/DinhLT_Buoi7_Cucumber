@@ -1,6 +1,6 @@
 package StepDefinition;
 
-import base.BaseSetup;
+import base.BaseSetupCucumber;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import pages.CustomerPage;
 import pages.LoginPage;
 
-public class CustomerTest extends BaseSetup {
+public class CustomerTest extends BaseSetupCucumber {
     private WebDriver driver;
     private Actions action;
     private CustomerPage customer;
@@ -49,7 +49,7 @@ public class CustomerTest extends BaseSetup {
     public void enterCustomerInformation() throws InterruptedException {
         customer.enterNameCustomer("Khách hàng số " + customer.randomNum);
         customer.enterCodeCustomer("KH-" + customer.randomNum);
-        customer.enterPhoneCustomer("097887142" + customer.randomNumForPhone);
+        customer.enterPhoneCustomer("097887141" + customer.randomNumForPhone);
         customer.enterEmailCustomer("dinhlt" + customer.randomNum + "@sapo.vn");
         customer.enterAddressCustomer("Địa chỉ test " + customer.randomNum);
         customer.clickDropdownDistrict();

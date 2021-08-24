@@ -1,14 +1,14 @@
 package StepDefinition;
 
-import base.BaseSetup;
+import base.BaseSetupCucumber;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeClass;
 import pages.LoginPage;
 
-public class LoginTest extends BaseSetup{
+
+public class LoginTest extends BaseSetupCucumber {
     private WebDriver driver;
     private LoginPage login;
 

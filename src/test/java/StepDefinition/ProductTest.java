@@ -1,17 +1,17 @@
 package StepDefinition;
 
-import base.BaseSetup;
+import base.BaseSetupCucumber;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.CustomerPage;
 import pages.LoginPage;
 import pages.ProductPage;
 
-public class ProductTest extends BaseSetup {
+
+public class ProductTest extends BaseSetupCucumber {
     private WebDriver driver;
     private WebDriverWait wait;
     public LoginPage login;
@@ -50,9 +50,9 @@ public class ProductTest extends BaseSetup {
 
     @And("Enter product information")
     public void enterProductInformation() throws InterruptedException {
-        product.enterProductName("Sản phẩm test "+product.randomNum);
-        product.enterProductSku("SKU-"+product.randomNum);
-        product.enterProductBarcode("Barcode- "+product.randomNum);
+        product.enterProductName("Sản phẩm test " + product.randomNum);
+        product.enterProductSku("SKU-" + product.randomNum);
+        product.enterProductBarcode("Barcode- " + product.randomNum);
         product.enterProductWeight("1000");
         product.enterProductRetailPrice("100000");
         product.enterProductWholesalePrice("90000");
