@@ -26,7 +26,7 @@ public class CustomerTest extends BaseSetup {
         customer.createCustomer(
                 "Khách hàng số " + customer.randomNum,
                 "KH-" + customer.randomNum,
-                "097887142" + customer.randomNumForPhone,
+                "097886142" + customer.randomNumForPhone,
                 "dinhlt" + customer.randomNum + "@sapo.vn",
                 "Địa chỉ test " + customer.randomNum,
                 "Cầu Giấy",
