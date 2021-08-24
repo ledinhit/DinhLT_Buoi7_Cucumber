@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import base.BaseSetupCucumber;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,9 +13,13 @@ public class LoginTest extends BaseSetupCucumber {
     private WebDriver driver;
     private LoginPage login;
 
-    @Given("Set up variable driver")
-    public void setUpVariableDriver() {
+    @Given("Open the Chrome and launch the application")
+    public void openTheChromeAndLaunchTheApplication() {
         beforeClass();
+    }
+
+    @And("Set the variables for the Login function")
+    public void setTheVariablesForTheLoginFunction() {
         driver = getDriver();
         login = new LoginPage(driver);
     }
@@ -26,9 +31,10 @@ public class LoginTest extends BaseSetupCucumber {
 
     }
 
-    @Then("Click button Login")
-    public void clickButtonLogin() throws InterruptedException {
+    @Then("Login successfully")
+    public void loginSuccessfully() throws InterruptedException {
         login.clickLogin();
         afterClass();
     }
+
 }

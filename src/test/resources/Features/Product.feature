@@ -1,12 +1,12 @@
 Feature: Create Product
 
   Scenario: Create product success
-    Given Set up variable for product
+    Given Open the Chrome and launch the application (Product)
+    And Set the variables for the Create Product function
     And Login to site (product)
-    When Select Product in Lest menu
+    When Select Product in left menu
     And Select List Product
     And Click button create product
-    And Enter product information
+    And Enter product information (name, sku, barcode, weight, retailPrice, wholesalePrice, cost, inventory, unit)
     And Click button Save Product
-    Then verify success message create product
-    And Close Browser (product)
+    Then Create product successfully

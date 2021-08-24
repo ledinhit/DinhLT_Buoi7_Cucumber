@@ -16,9 +16,13 @@ public class CustomerTest extends BaseSetupCucumber {
     private CustomerPage customer;
     private LoginPage login;
 
-    @Given("Set up")
-    public void setUp() {
+    @Given("Open the Chrome and launch the application \\(Customer)")
+    public void openTheChromeAndLaunchTheApplicationCustomer() {
         beforeClass();
+    }
+
+    @And("Set the variables for the Create Customer function")
+    public void setTheVariablesForTheCreateCustomerFunction() {
         driver = getDriver();
         action = getAction();
         customer = new CustomerPage(driver, action);
@@ -30,8 +34,8 @@ public class CustomerTest extends BaseSetupCucumber {
         login.Login("0978871423", "dinh@123");
     }
 
-    @When("Select Customer in Lest menu")
-    public void selectCustomerInLestMenu() {
+    @When("Select Customer in left menu")
+    public void selectCustomerInLeftMenu() {
         customer.clickMenuCustomer();
     }
 
@@ -45,11 +49,11 @@ public class CustomerTest extends BaseSetupCucumber {
         customer.clickButtonCreateCustomer();
     }
 
-    @And("Enter customer information")
-    public void enterCustomerInformation() throws InterruptedException {
+    @And("Enter customer information \\(name,code, email,phone, address, district, ward, payment type)")
+    public void enterCustomerInformationNameCodeEmailPhoneAddressDistrictWardPaymentType() throws InterruptedException {
         customer.enterNameCustomer("Khách hàng số " + customer.randomNum);
         customer.enterCodeCustomer("KH-" + customer.randomNum);
-        customer.enterPhoneCustomer("097887131" + customer.randomNumForPhone);
+        customer.enterPhoneCustomer("097897131" + customer.randomNumForPhone);
         customer.enterEmailCustomer("dinhlt" + customer.randomNum + "@sapo.vn");
         customer.enterAddressCustomer("Địa chỉ test " + customer.randomNum);
         customer.clickDropdownDistrict();
@@ -82,5 +86,10 @@ public class CustomerTest extends BaseSetupCucumber {
         afterClass();
     }
 
+    @Then("Create customer successfully")
+    public void createCustomerSuccessfully() throws InterruptedException {
+        customer.verifyMessCreateCustomerSuccess();
+        afterClass();
+    }
 
 }

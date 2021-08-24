@@ -1,6 +1,7 @@
-Feature: Login page
+Feature: Login functionality of Application
 
-  Scenario: Login success
-    Given Set up variable driver
+  Scenario: Verification of Login button
+    Given Open the Chrome and launch the application
+    And Set the variables for the Login function
     When Enter the Username and Password
-    Then Click button Login
+    Then Login successfully

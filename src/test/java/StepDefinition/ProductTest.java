@@ -17,9 +17,13 @@ public class ProductTest extends BaseSetupCucumber {
     public LoginPage login;
     public ProductPage product;
 
-    @Given("Set up variable for product")
-    public void setUpVariableForProduct() {
+    @Given("Open the Chrome and launch the application \\(Product)")
+    public void openTheChromeAndLaunchTheApplicationProduct() {
         beforeClass();
+    }
+
+    @And("Set the variables for the Create Product function")
+    public void setTheVariablesForTheCreateProductFunction() {
         driver = getDriver();
         wait = getWait();
         login = new LoginPage(driver);
@@ -31,10 +35,9 @@ public class ProductTest extends BaseSetupCucumber {
         login.Login("0978871423", "dinh@123");
     }
 
-    @When("Select Product in Lest menu")
-    public void selectProductInLestMenu() {
+    @When("Select Product in left menu")
+    public void selectProductInLeftMenu() {
         product.selectProduct();
-
     }
 
     @And("Select List Product")
@@ -48,8 +51,8 @@ public class ProductTest extends BaseSetupCucumber {
         Thread.sleep(1000);
     }
 
-    @And("Enter product information")
-    public void enterProductInformation() throws InterruptedException {
+    @And("Enter product information \\(name, sku, barcode, weight, retailPrice, wholesalePrice, cost, inventory, unit)")
+    public void enterProductInformationNameSkuBarcodeWeightRetailPriceWholesalePriceCostInventoryUnit() throws InterruptedException {
         product.enterProductName("Sản phẩm test " + product.randomNum);
         product.enterProductSku("SKU-" + product.randomNum);
         product.enterProductBarcode("Barcode- " + product.randomNum);
@@ -67,14 +70,9 @@ public class ProductTest extends BaseSetupCucumber {
         product.clickBtnSaveProduct();
     }
 
-    @Then("verify success message create product")
-    public void verifySuccessMessageCreateProduct() {
+    @Then("Create product successfully")
+    public void createProductSuccessfully() throws InterruptedException {
         product.verifyNotiMessage();
-    }
-
-    @And("Close Browser \\(product)")
-    public void closeBrowserProduct() throws InterruptedException {
         afterClass();
     }
-
 }

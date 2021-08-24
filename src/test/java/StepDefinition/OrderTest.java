@@ -15,9 +15,13 @@ public class OrderTest extends BaseSetupCucumber {
     public LoginPage login;
     public OrderPage order;
 
-    @Given("Set up variable for Order")
-    public void setUpVariableForOrder() {
+    @Given("Open the Chrome and launch the application \\(Order)")
+    public void openTheChromeAndLaunchTheApplicationOrder() {
         beforeClass();
+    }
+
+    @And("Set the variables for the Create Order function")
+    public void setTheVariablesForTheCreateOrderFunction() {
         driver = getDriver();
         login = new LoginPage(driver);
         order = new OrderPage(driver);
@@ -28,13 +32,13 @@ public class OrderTest extends BaseSetupCucumber {
         login.Login("0978871423", "dinh@123");
     }
 
-    @When("Select Order in Lest menu")
-    public void selectOrderInLestMenu() {
+    @When("Select Order in the left menu")
+    public void selectOrderInTheLeftMenu() {
         order.clickMenuOrder();
     }
 
-    @And("Select create Order")
-    public void selectCreateOrder() {
+    @And("Select create Order and delivery")
+    public void selectCreateOrderAndDelivery() {
         order.clickCreatOrder();
     }
 
@@ -57,15 +61,11 @@ public class OrderTest extends BaseSetupCucumber {
         Thread.sleep(1000);
     }
 
-    @Then("verify product name and sku in new order")
-    public void verifyProductNameAndSkuInNewOrder() {
+
+    @Then("Create order successfully")
+    public void createOrderSuccessfully() throws InterruptedException {
         order.verifyNameProductInOrder();
         order.verifySkuProductInOrder();
-    }
-
-    @And("Close Browser - Order")
-    public void closeBrowserOrder() throws InterruptedException {
         afterClass();
     }
-
 }
